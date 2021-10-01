@@ -1,8 +1,10 @@
 import React from "react";
 import ExpenseLayout from "./components/Expenses/ExpenseLayout";
+// import ExpenseForm from "./components/NewExpense/ExpenseForm";
 // import ExpenseItem from "./components/ExpenseItem";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-const App = () => {
+const App = (props) => {
   const expenses = [
     {
       id: "e1",
@@ -25,6 +27,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expenseData) => {
+     expenses.push(expenseData);
+     console.log('this is from app',expenses)
+  }
+
 //   return React.createElement(
 //     "div",
 //     {},
@@ -34,7 +41,7 @@ const App = () => {
 
     return (
       <div>
-         <div>Let's get started</div>
+        <NewExpense onAddExpense={addExpenseHandler}/>
         <ExpenseLayout expenseObject={expenses} />
       </div>
     );
