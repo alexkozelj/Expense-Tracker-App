@@ -33,7 +33,7 @@ const ExpenseForm = (props) => {
          amount: enteredAmount,
          date: new Date(enteredDate)
       }
-      console.log("🚀 ~ file: ExpenseForm. js ~ line 40 ~ submitHandler ~ expenseData", expenseData)
+      // console.log("🚀 ~ file: ExpenseForm. js ~ line 40 ~ submitHandler ~ expenseData", expenseData)
 
       props.onSaveExpenseData(expenseData)
       setEnteredTitle('')
